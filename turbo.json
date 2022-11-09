@@ -1,0 +1,53 @@
+{
+  "globalEnv": [
+    "VERCEL_URL",
+    "PRISMA_OUTPUT",
+    "PORT"
+  ],
+  "globalDependencies": [
+    ".env"
+  ],
+  "pipeline": {
+    "build": {
+      "dependsOn": [
+        "^build",
+        "^db:generate"
+      ],
+      "outputs": [
+        ".next/**",
+        ".expo/**"
+      ]
+    },
+    "lint": {
+      "outputs": []
+    },
+    "format": {
+      "outputs": []
+    },
+    "dev": {
+      "dependsOn": [
+        "^db:generate"
+      ],
+      "cache": false
+    },
+    "db:generate": {
+      "outputs": [
+        "../../node_modules/.prisma/client",
+        "./node_modules/.prisma/client"
+      ],
+      "cache": true
+    },
+    "db:push": {
+      "cache": false
+    },
+    "db:seed": {
+      "cache": false
+    },
+    "clean": {
+      "cache": false
+    },
+    "//#clean": {
+      "cache": false
+    }
+  }
+}

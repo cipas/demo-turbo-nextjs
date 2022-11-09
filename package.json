@@ -1,0 +1,26 @@
+{
+  "name": "turbo-nextjs-template",
+  "private": true,
+  "packageManager": "pnpm@7.14.1",
+  "scripts": {
+    "build": "turbo build",
+    "dev": "turbo dev --parallel",
+    "clean:workspaces": "turbo clean",
+    "clean": "rm -rf node_modules .vercel .turbo",
+    "format": "turbo format",
+    "lint": "turbo lint && manypkg check",
+    "fix": "manypkg fix",
+    "db:generate": "turbo db:generate",
+    "db:seed": "turbo db:seed",
+    "db:push": "turbo db:push"
+  },
+  "dependencies": {
+    "@acme/tailwind": "*",
+    "@manypkg/cli": "^0.19.2",
+    "autoprefixer": "^10.4.7",
+    "postcss": "^8.4.14",
+    "prettier": "^2.7.1",
+    "tailwindcss": "^3.2.0",
+    "turbo": "^1.5.5"
+  }
+}
